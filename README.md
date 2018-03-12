@@ -24,3 +24,20 @@ let myHeader = Interface.Create({type: 'div', className: 'Header', elements: [
 //Add to page
 document.body.appendChild(myHeader);
 ```
+
+### Using the TabBar class included
+```javascript
+import {TabBar} from './Components/TabBar';
+
+let myHeader = Interface.Create({type: 'div', className: 'Header', elements: [
+  //Create the title bar
+  {type: 'div', className: 'TitleBar', text: 'Welcome to my page'},
+  //Create the tab bar
+  (tabBar = new TabBar('TabBar')).getInterface();
+]});
+//Add elements to tab bar
+tabBar.addItem({name: 'About', onClick: this.aboutClicked, className = 'AboutTab'});
+tabBar.addItem({name: 'Blog', onClick: this.blogClicked, className = 'BlogTab'});
+//Add to page
+document.body.appendChild(myHeader);
+```
